@@ -32,17 +32,21 @@ app.get('/apps', (req, res) => {
                     .App
                     .toLowerCase()
                     .includes(search.toLowerCase()));
-    res 
-        .json(results)
 
-        //sorting and choosing genre not working yet
     if (sort) {
         results.sort((a, b) => {
             return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
         });
     }  
+
+  
+    
+    res
+        .json(results)
 }) 
 
 app.listen(8000, () => {
     console.log('Express server is listening on port 8000!');
 });
+
+module.exports = app;
