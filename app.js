@@ -29,7 +29,7 @@ app.get('/apps', (req, res) => {
     let results = apps
         .filter(app =>
                 app
-                    .App
+                    .Genres
                     .toLowerCase()
                     .includes(search.toLowerCase()));
 
